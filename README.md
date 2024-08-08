@@ -1,4 +1,4 @@
-Docker_Projects
+<h2> Docker_Projects </h2>
 This repository contains two Dockerized projects that demonstrate the use of Docker for containerizing applications in different programming languages.
 
 1. Java Project: Hello and Date Printer
