@@ -7,6 +7,7 @@ services:
       - ./backend/data:/data 
     ports:
       - "27017:27017"
+
   backend:
     container_name: wanderlust-backend
     build: ./backend
@@ -16,6 +17,16 @@ services:
       - "5000:5000"
     depends_on:
       - mongodb
+
+  redis:
+    container_name: redis
+    restart: unless-stopped
+    image: redis:7.0.5-alpine
+    expose:
+      - 6379
+    depends_on:
+      - mongodb
+
   frontend:
     container_name: wanderlust-frontend
     build: ./frontend
