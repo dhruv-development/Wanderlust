@@ -1,7 +1,7 @@
 <h2 align="center">🚀 Docker_Projects 🚀</h2>
 
 <p align="center">
-  This repository contains three Dockerized projects that demonstrate the use of Docker for containerizing applications in different programming languages.
+  This repository contains Dockerized projects that demonstrate the use of Docker for containerizing applications in different programming languages.
 </p>
 
 ---
