@@ -45,6 +45,19 @@ The Docker setup includes a Docker Compose file that orchestrates the deployment
 
 ---
 
+### **Wanderlust: A Travel Blog Web Application**
+
+**Description:**  
+Wanderlust is a travel blog web application built with Python Flask. The app allows users to explore various travel destinations and share their experiences. It includes a homepage with blog posts, and features for users to interact with the content.
+
+**Purpose:**  
+This project demonstrates how to containerize a more complex web application using Docker. The setup includes a Dockerfile that configures the environment, installs dependencies, and exposes the Flask application on port 5000.
+
+**Dockerfile:**  
+The Dockerfile is configured to install the necessary libraries, set up the Flask app, and serve it on port 5000. The project also showcases how to handle static files and templates within a containerized environment.
+
+---
+
 <p align="center">
   ✨ Happy Coding! ✨
 </p>
