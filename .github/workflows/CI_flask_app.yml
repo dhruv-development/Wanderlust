@@ -12,13 +12,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Build docker image
-        run: |
-          cd python/flask-app
-          docker build -t flask-app .
 
       - name: Run docker
         run: |
           cd python/flask-app
-          docker run -d -p 5000:5000 --name flask-app-container flask-app
+          docker stop flask-app-container
