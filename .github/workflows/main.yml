@@ -17,7 +17,7 @@ jobs:
     name: "Wanderlust CI"
     uses: dhruv-development/reusable_workflows/.github/workflows/wanderlust-ci.yml@main
     with:
-      role-assume: "arn:aws:iam::${{ secrets.AWS_ACC }}:role/GitHubActionsRole"
+      role-assume: "arn:aws:iam::410454990341:role/GitHubActionsRole"
       AWS_REGION: "${{ secrets.AWS_REGION }}"
       ECR_MONGO_REPO: "${{ secrets.ECR_MONGO_REPO }}"
       ECR_REDIS_REPO: "${{ secrets.ECR_REDIS_REPO }}"
