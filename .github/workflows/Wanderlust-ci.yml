@@ -1,7 +1,7 @@
 name: Wanderlust CI
 on: 
-  # push: 
-  #   branches: master
+   # push: 
+   #   branches: main
   #   paths-ignore:
   #     - './.github/workflows/**'
 
