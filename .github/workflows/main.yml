@@ -1,4 +1,4 @@
-name: Wanderlust CI
+name: Wanderlust CI/CD
 on: 
    # push: 
    #   branches: main
