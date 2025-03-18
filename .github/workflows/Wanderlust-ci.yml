@@ -15,7 +15,7 @@ permissions:
 jobs:
   run-reusable-workflow:
     name: "Wanderlust CI"
-    uses: dhruv-development/reusable_workflows/.github/workflows/wanderlust-ci@main
+    uses: dhruv-development/reusable_workflows/.github/workflows/wanderlust-ci.yml@main
     with:
       role-assume: "arn:aws:iam::${{ seecrets.AWS_ACC }}:role/GitHubActionsRole"
       AWS_REGION: "${{ secrets.AWS_REGION}}"
