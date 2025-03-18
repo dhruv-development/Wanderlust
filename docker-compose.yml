@@ -1,0 +1,45 @@
+version: '3.9'
+services:
+  mongodb:
+    container_name: mongodb
+    image: mongo:latest
+    volumes:
+      - ./backend/data:/data 
+    ports:
+      - "27017:27017"
+    command: >
+      bash -c "
+      mongod --bind_ip_all & 
+      sleep 5 && 
+      mongoimport --db wanderlust --collection posts --file /data/sample_posts.json --jsonArray &&
+      tail -f /dev/null"
+
+  backend:
+    container_name: wanderlust-backend
+    build: ./backend
+    env_file:
+      - ./backend/.env.sample
+    ports:
+      - "31100:5000"
+    depends_on:
+      - mongodb
+
+  redis:
+    container_name: redis
+    restart: unless-stopped
+    image: redis:7.0.5-alpine
+    expose:
+      - 6379
+    depends_on:
+      - mongodb
+
+  frontend:
+    container_name: wanderlust-frontend
+    build: ./frontend
+    env_file:
+      - ./frontend/.env.sample
+    ports:
+      - "5173:5173"
+
+volumes:
+  data:
