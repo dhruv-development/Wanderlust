@@ -12,6 +12,7 @@ const port = PORT || 5000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+const corsOrigin = process.env.CORS_ORIGIN;
 app.use(cors({
     origin: corsOrigin,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
