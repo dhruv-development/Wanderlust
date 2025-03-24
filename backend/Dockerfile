@@ -1,21 +1,20 @@
-# Base image
+#base image
 FROM node:22-slim
 
-# Set working directory
+#working directory
 WORKDIR /app
 
-# Copy package.json and install dependencies
-COPY package.json package-lock.json ./
-RUN npm install
-
-# Copy source code
+#copy code into container
 COPY . .
 
-# Copy environments
+#install dependencies
+RUN npm i
+
+#copy environments
 COPY .env.sample .env
 
-# Expose port
+#Expose port
 EXPOSE 5000
 
-# Start the server
-CMD ["npm", "start"]
+#Run server
+CMD ["npm","start"]
