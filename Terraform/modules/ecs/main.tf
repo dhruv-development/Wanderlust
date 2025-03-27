@@ -172,7 +172,7 @@ resource "aws_ecs_task_definition" "backend" {
     ],
     "essential": true,
     "environment": [
-      { "name": "MONGODB_URI", "value": "mongodb+srv://dhruv:uczASn7YJVnke7Bb@wanderlust.pfdev.mongodb.net/wanderlust?retryWrites=true&w=majority&appName=Wanderlust" }
+      { "name": "MONGODB_URI", "value": "mongodb+srv://username:password@wanderlust.pfdev.mongodb.net/wanderlust?retryWrites=true&w=majority&appName=Wanderlust" }
     ],
     "logConfiguration": {
       "logDriver": "awslogs",
