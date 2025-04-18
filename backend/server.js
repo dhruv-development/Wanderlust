@@ -20,18 +20,25 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const allowedOrigins = process.env.CORS_ORIGIN?.split(',') || [
-  'https://codematrix.space',
-  'https://www.codematrix.space'
-];
+// const allowedOrigins = process.env.CORS_ORIGIN?.split(',') || [
+//   'https://codematrix.space',
+//   'https://www.codematrix.space'
+// ];
 
-const corsOrigin = process.env.CORS_ORIGIN;
+// const corsOrigin = process.env.CORS_ORIGIN;
+// app.use(cors({
+//     origin: corsOrigin,
+//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+//     credentials: true,
+//     optionsSuccessStatus: 204,
+// }));
 app.use(cors({
-    origin: corsOrigin,
+    origin: true,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 204,
 }));
+
 app.use(cookieParser());
 app.use(compression());
 
