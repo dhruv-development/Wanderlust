@@ -12,6 +12,11 @@ import postsRouter from './routes/posts.js';
 const app = express();
 const port = PORT || 5000;
 
+app.use((req, res, next) => {
+  res.removeHeader('Access-Control-Allow-Origin');
+  next();
+});
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
