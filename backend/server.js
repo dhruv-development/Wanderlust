@@ -14,6 +14,12 @@ const port = PORT || 5000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+const allowedOrigins = process.env.CORS_ORIGIN?.split(',') || [
+  'https://codematrix.space',
+  'https://www.codematrix.space'
+];
+
 const corsOrigin = process.env.CORS_ORIGIN;
 app.use(cors({
     origin: corsOrigin,
